@@ -51,12 +51,12 @@ class MedianFetcher:
     def get_median(self):
         if len(self.numbers) == 0:
             return None
-        # figure out if the lenght of the numbers list is odd or even
+        # figure out if the length of the numbers list is odd or even
         mid = len(self.numbers) // 2
         if len(self.numbers) % 2 == 1:
             # if it's odd, then we can pick the middle number
             # how do we get the middle number of a list
-            # take the lenght, divide it by 2
+            # take the length, divide it by 2
             # // rounds down as division
             return self.numbers[mid]
         else:
