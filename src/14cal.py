@@ -11,10 +11,10 @@ and does the following:
    module may be helpful for this.
  - If the user specifies one argument, assume they passed in a
    month and render the calendar for that month of the current year.
- - If the user specifies two arguments, assume they passed in
+ x If the user specifies two arguments, assume they passed in
    both the month and the year. Render the calendar for that
    month and year.
- - Otherwise, print a usage statement to the terminal indicating
+ x Otherwise, print a usage statement to the terminal indicating
    the format that your program expects arguments to be given.
    Then exit the program.
 """
@@ -22,3 +22,16 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+yy = int(input("Enter year: "))
+mm = int(input("Enter month: "))
+
+if len(sys.argv) == 0:
+  print(datetime.date)
+if len(sys.argv) == 1:
+  print(calendar.month(datetime.year, mm))
+if yy & mm:
+  print(calendar.month(yy, mm))
+else:
+  print("Year format: XXXX\n Month Format: XX (1 - 12)")
+
