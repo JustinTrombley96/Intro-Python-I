@@ -8,6 +8,9 @@ class LatLon():
     def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
+    def __str__(self):
+        return f"Location: {self.lat}, {self.lon}"
+
 
 
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
@@ -21,6 +24,7 @@ class Waypoint(LatLon):
 
     def __str__(self):
         return '"{self.name}", {self.lat}, {self.lon}'.format(self=self)
+        #return f"<Geocache {self.name}, {self.difficulty}, {self.size}, {self.lat}, {self.lon}>"
 
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
@@ -39,25 +43,26 @@ class Geocache(Waypoint):
 
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
+if __name__ == '__main__':
+    #This code will only run when I run this file instead of when I run store.py
+    # YOUR CODE HERE
 
-# YOUR CODE HERE
-
-waypoint1 = Waypoint("Catacombs", 41.70505, -121.51521)
-print(waypoint1.name, waypoint1.lat, waypoint1.lon)
+    waypoint1 = Waypoint("Catacombs", 41.70505, -121.51521)
+    print(waypoint1.name, waypoint1.lat, waypoint1.lon)
 
 
-# Without changing the following line, how can you make it print into something
-# more human-readable? Hint: Look up the `object.__str__` method
+    # Without changing the following line, how can you make it print into something
+    # more human-readable? Hint: Look up the `object.__str__` method
 
-print(waypoint1)
+    print(waypoint1)
 
-# Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
+    # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
-# YOUR CODE HERE
-geocache1 = Geocache('Newberry Views', "diff 1.5",
-                     "size 2", 44.052137, -121.41556)
-print(geocache1.name, geocache1.difficulty,
-      geocache1.size, geocache1.lat, geocache1.lon)
+    # YOUR CODE HERE
+    geocache1 = Geocache('Newberry Views', "diff 1.5",
+                        "size 2", 44.052137, -121.41556)
+    print(geocache1.name, geocache1.difficulty,
+        geocache1.size, geocache1.lat, geocache1.lon)
 
-# Print it--also make this print more nicely
-print(geocache1)
+    # Print it--also make this print more nicely
+    print(geocache1)
