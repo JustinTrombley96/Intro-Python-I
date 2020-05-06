@@ -23,15 +23,23 @@ import sys
 import calendar
 from datetime import datetime
 
-yy = int(input("Enter year: "))
-mm = int(input("Enter month: "))
+args = sys.argv
 
-if len(sys.argv) == 0:
-  print(datetime.date)
-if len(sys.argv) == 1:
-  print(calendar.month(datetime.year, mm))
-if yy & mm:
-  print(calendar.month(yy, mm))
+today = datetime.now()
+month = today.month
+year = today.year
+
+tc = calendar.TextCalendar()
+
+if len(args) == 1:
+  tc.prmonth(year, month)
+elif len(args) == 2:
+  month = int(args[1])
+  tc.prmonth(year, month)
+elif len(args) == 3:
+  month = int(args[1])
+  year = int(args[2])
+  tc.prmonth(year, month)
 else:
   print("Year format: XXXX\n Month Format: XX (1 - 12)")
 
